@@ -1,0 +1,143 @@
+<p style="text-align:center"><span style="font-size:16px"><strong>7-es t&eacute;tel kidolgoz&aacute;sa</strong></span></p>
+
+<p style="text-align:center"><span style="font-size:16px"><strong>Neptun k&oacute;d: CTUMF2</strong></span></p>
+
+<p>&nbsp;</p>
+
+<p><strong>T&eacute;tel le&iacute;r&aacute;sa:</strong></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">Ismertesse egy webes kiszolg&aacute;l&oacute; k&eacute;t legfontosabb alrendszer&eacute;t. Besz&eacute;ljen a MySQL architekt&uacute;r&aacute;j&aacute;r&oacute;l, mutassa be az el&eacute;rhető adatb&aacute;zismotorokat. Mutassa be a MySQL jogosults&aacute;gkezel&eacute;si rendszer&eacute;t! Ismertesse az Apache webszerver fel&eacute;p&iacute;t&eacute;s&eacute;t is. T&eacute;rjen ki a modularit&aacute;sra! Mire val&oacute; a virtual host az apachban? Hogyan műk&ouml;dik? Hogyan kell be&aacute;ll&iacute;tani? &Iacute;rjon a hiteles&iacute;t&eacute;s &eacute;s jelsz&oacute;kezel&eacute;s lehetős&eacute;geiről az Apache-ban! Hogyan &eacute;p&uuml;l fel az Apache konfigur&aacute;ci&oacute;s f&aacute;jl? (direkt&iacute;v&aacute;k, kont&eacute;nerek, kontextus)</span></span></p>
+
+<p>&nbsp;</p>
+
+<p>Kidolgozott t&eacute;tel:</p>
+
+<p><strong>Webes kiszolg&aacute;l&oacute; almoduljai:</strong></p>
+
+<p>Webes kiszolg&aacute;l&oacute; alrendszerei: A Web Server (p&eacute;ld&aacute;ul Apache) &eacute;s a perzisztens t&aacute;rol&oacute;, &aacute;ltal&aacute;ban adatb&aacute;zis (p&eacute;ld&aacute;sul MySQL). A web szerver egy kiszolg&aacute;l&oacute; komponens, mely el&eacute;rhetőv&eacute; teszi a web kliensek sz&aacute;m&aacute;ra a megjelen&iacute;thető tartamat (HTML/CSS) HTTP(S) protkoll seg&iacute;ts&eacute;g&eacute;vel. Az adatb&aacute;zis t&aacute;rolja a webcontenthez sz&uuml;ks&eacute;ges adatokat (p&eacute;ld&aacute;ul &uuml;gyf&eacute;ladatok, oldalhoz tartoz&oacute; dinamikus tartalmaz stb)</p>
+
+<p><strong>MYSQL architekt&uacute;ra</strong></p>
+
+<p><img src="mysql_arch.JPG" style="height:547px; width:510px" /></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Adatb&aacute;zis motorok:</strong></p>
+
+<p>MYISAM: kis footprintel rendelkező verzi&oacute;, &aacute;ltal&aacute;ban csak read műveletekre haszn&aacute;lj&aacute;k&nbsp;</p>
+
+<p>INNODB:Az alap&eacute;rtelmezett motor, ACID megfelelős&eacute;ggű</p>
+
+<p>MEMORAY: RAM-ban t&aacute;rol, gyors adathozz&aacute;f&eacute;r&eacute;st biztos&iacute;tva. Kev&eacute;sb&eacute; kritikus adatok t&aacute;rol&aacute;s&aacute;ra alkalmazhat&oacute;, mivel adatveszt&eacute;s kock&aacute;zata jelentősebb.&nbsp;</p>
+
+<p>CSV: text alap&uacute; t&aacute;rol&oacute; motor., CSV form&aacute;tumban t&aacute;rol, ez&aacute;ltal k&ouml;nnyen integr&aacute;lhat&oacute; k&uuml;l&ouml;nf&eacute;le scriptekkel</p>
+
+<p>NDB: Klaszterezett adatb&aacute;zis, magas rendelekez&eacute;sre &aacute;ll&aacute;s ig&eacute;nye eset&eacute;n</p>
+
+<p>Federated: T&ouml;bb MySQL server egy logikai adatb&aacute;ziss&aacute; alak&iacute;t&aacute;s&aacute;t teszi lehetőv&eacute;</p>
+
+<p>&nbsp;</p>
+
+<p><strong>MYSQL Jogosults&aacute;gkezel&eacute;s:</strong></p>
+
+<p>Felhaszn&aacute;l&oacute; l&eacute;trehoz&aacute;sa a &quot;Create User&quot; parancssal lehets&eacute;ges.</p>
+
+<p>Jogok(privileges) adhat&oacute;ak a &quot;GRANT&quot; parancscsal, illetve el is vehetőek a REVOKE parancs seg&iacute;ts&eacute;g&eacute;vel.</p>
+
+<p>Alapvetően minden adatb&aacute;zis objektumra (t&aacute;bl&aacute;k, n&eacute;zetek, triggerek stb)&nbsp; adhat&oacute;ak k&uuml;l&ouml;nb&ouml;ző jogok.</p>
+
+<p>Leggyakrabban haszn&aacute;lt jogosults&aacute;gok: select, updtae, create, delete.</p>
+
+<p>Ezen fel&uuml;l adatb&aacute;zis&uuml;zemeltet&eacute;hez k&uuml;l&ouml;nb&ouml;ző jogok adhat&oacute;ak afentieken k&iacute;v&uuml;l, p&eacute;ld&aacute;ul: tűzfal adminisztr&aacute;ci&oacute;, audit log hozz&aacute;f&eacute;r&eacute;s,&nbsp;</p>
+
+<p>A k&uuml;l&uuml;nb&ouml;ző privil&eacute;gimokat&nbsp; szerepk&ouml;rben (role) &ouml;sszefoghatjuk nagyobb egys&eacute;gbe, a k&ouml;nyebb adminisztr&aacute;ci&oacute; jegy&eacute;ben.</p>
+
+<p><strong>Apache webszerever fel&eacute;p&iacute;t&eacute;se</strong></p>
+
+<p>Az apache webserver modul&aacute;ris fel&eacute;p&iacute;t&eacute;sű,&nbsp; &aacute;ll egy apache core modulb&oacute;l, ami a legsz&uuml;ks&eacute;gesebb fi&oacute;unkcionalit&aacute;st tartalmazza , amihez k&uuml;l&ouml;nb&ouml;ző egy&eacute;b modulok telep&iacute;thetőek, illetve saj&aacute;t modul fejleszt&eacute;s&eacute;re is ny&iacute;lik lehetős&eacute;g, &iacute;gy a sz&aacute;munkra sz&uuml;ks&eacute;ges funkci&oacute;kat a modulok telep&iacute;t&eacute;s&eacute;vel &eacute;rhetjk el.</p>
+
+<p><img src="apache_arch.JPG" style="height:292px; width:367px" /></p>
+
+<p>&nbsp;</p>
+
+<p>Leggyakoribb modulok:&nbsp;</p>
+
+<p>mpm_common: multi-processing modul</p>
+
+<p>mod_proxy: proxy funkcionalit&aacute;s</p>
+
+<p>mod_ssl: TLS alap&uacute; kapcsolatok kezel&eacute;s&eacute;re</p>
+
+<p>Tov&aacute;bbi modulok:&nbsp;<a href="https://httpd.apache.org/docs/2.4/mod/">https://httpd.apache.org/docs/2.4/mod/</a></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Apache virtual host:</strong></p>
+
+<p>A virtual host egy apache konfigur&aacute;ci&oacute;s direkt&iacute;va, melynek seg&iacute;ts&eacute;g&eacute;vel a web kiszolg&aacute;l&oacute;nkban t&ouml;bb k&uuml;l&ouml;nb&ouml;ző website-ot is kezelni tudunk.</p>
+
+<p>HAszn&aacute;lata:</p>
+
+<pre>
+
+Listen 80
+&lt;VirtualHost *:80&gt;
+    DocumentRoot &quot;/www/example1&quot;
+    ServerName www.example.com
+
+    # Other directives here
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:80&gt;
+    DocumentRoot &quot;/www/example2&quot;
+    ServerName www.example.org
+
+    # Other directives here
+&lt;/VirtualHost&gt;</pre>
+
+<p><strong>Apache hiteles&iacute;t&eacute;s &eacute;s jelsz&oacute;kezel&eacute;s</strong></p>
+
+<p>A hiteles&iacute;t&eacute;s haszn&aacute;lat&aacute;hoz a mod_auth_basic (basic autentik&aacute;ci&oacute; kezel&eacute;se) illetve a mod_auth_digest modul valamelyike sz&uuml;ks&eacute;geltetik. &Iacute;gy jelsz&oacute;val/ szofisztik&aacute;ltabb autentik&aacute;ci&oacute;s mechanizmussal v&eacute;dhetj&uuml;k a tartalom el&eacute;r&eacute;s&eacute;t. Ilyenkor a felhaszn&aacute;l&oacute; sz&aacute;m&aacute;ra authentik&aacute;ci&oacute;s adatok megad&aacute;sa sz&uuml;ks&eacute;ges velemiylen form&aacute;ban (popup ablak, bejelentkez&eacute;s a weblapon kereszt&uuml;l, O365 authentik&aacute;ci&oacute; stb..)</p>
+
+<p>Basic autentik&aacute;ci&oacute; eset&eacute;n a htpaswd(jelszavak t&aacute;rol&aacute;sa) &eacute;s htaccess fileokon kereszt&uuml;l konfigur&aacute;lhat&oacute; a hiteles&iacute;t&eacute;s.</p>
+
+<p>Egy&eacute;b modulok haszn&aacute;lta&aacute;val lehetős&eacute;g ny&iacute;lik k&uuml;lső authentki&aacute;ci&oacute;s rendszerek haszn&aacute;lat&aacute;hoz (pl: AD, O365, OpenLDAP) is, &iacute;gy a hiteles&iacute;t&eacute;si folyamat az apche hat&oacute;k&ouml;r&eacute;n k&iacute;v&uuml;l helyezkedik el.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Apache konfigur&aacute;ci&oacute;:</strong></p>
+
+<p>A webkiszolg&aacute;l&oacute; konfigur&aacute;ci&oacute;j&aacute;t a httpd.conf file szerkeszt&eacute;s&eacute;vel tudjuk megteni, ahol k&uuml;l&ouml;nb&ouml;ző direkt&iacute;v&aacute;kon kereszt&uuml;l &eacute;rhetj&uuml;k el a sz&aacute;munkra megfelelő be&aacute;ll&iacute;t&aacute;sokat.</p>
+
+<p>Leggyakoribb direkt&iacute;v&aacute;k:</p>
+
+<p><em>Listen </em>:a listener port megad&aacute;sa</p>
+
+<p><em>ServerName:</em> a kiszolg&aacute;l&oacute; dns c&iacute;me (fqdn) vagy ip c&iacute;me</p>
+
+<p><em>DocumentRoot:</em> a webes kiszolg&aacute;l&oacute; gy&ouml;k&eacute;r k&ouml;nyvt&aacute;ra</p>
+
+<pre>
+<em>&lt;Directory &quot;k&ouml;nyvt&aacute;rn&eacute;v&quot;&gt;...&lt;/Directory&gt;</em> : be&aacute;ll&iacute;t&aacute;sok alkalmaz&aacute;sa k&ouml;nyvt&aacute;rra</pre>
+
+<pre>
+<em>&lt;Files &quot;&aacute;llom&aacute;nyn&eacute;v&quot;&gt;...&lt;/Files&gt;</em> : be&aacute;ll&iacute;t&aacute;sok alkalmaz&aacute;sa file-ra</pre>
+
+<p><em>&lt;VirtualHost &gt; ....&lt;/VirtualHost&gt;</em> : virtu&aacute;lsi hoszt be&aacute;ll&iacute;t&aacute;sa, t&ouml;bb domain kiszolg&aacute;l&aacute;sa, n&eacute;v, ip, port alapj&aacute;n szepar&aacute;l&aacute;sa</p>
+
+<p><em>AuthType</em> : Hiteles&iacute;t&eacute;s t&iacute;pusa</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Forr&aacute;sok:</strong></p>
+
+<p><a href="https://dev.mysql.com/">https://dev.mysql.com/</a></p>
+
+<p><a href="https://hu.wikipedia.org/">https://wikipedia.org/</a></p>
+
+<p><a href="https://httpd.apache.org/">https://httpd.apache.org/</a></p>
+
